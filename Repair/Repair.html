@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Repair</title>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 2%;
+        }
+
+        .firstline-Business-Dashboard {
+            border-bottom: 1px solid #ccc;
+            padding-left: 25px;
+            height: 30px;
+        }
+
+        .fist-line {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="date"] {
+            padding: 5px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+        .dropdown {
+            margin: 10px;
+        }
+
+        .dropdown label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .dropdown select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .dropdown select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .search-container .search-button {
+            background-color: #28A745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .graph-container {
+            margin: 10px;
+            display: flex;
+            align-content: space-between;
+        }
+
+        .first-chart {
+            width: 100%;
+        }
+
+        .second-chart {
+            width: 100%;
+        }
+
+        .table-Dashboard-container {
+            margin: 10px;
+            margin-top: 20px;
+            background-color: #F5F8FF;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #33499F;
+            color: white;
+        }
+
+        .tablewithgraph {
+            display: flex;
+            margin: 10px;
+        }
+
+        .table-Dashboard-container {
+            width: 100%;
+        }
+
+        .chart {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #chart_div {
+            background-color: transparent !important;
+        }
+
+
+
+
+        @media screen and (max-width: 600px) {
+
+            .fist-line {
+                flex-direction: column;
+            }
+
+            .dropdown {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .graph-container {
+                flex-direction: column;
+            }
+
+            .tablewithgraph {
+                flex-direction: column;
+            }
+
+            .table-Dashboard-container {
+                width: 100%;
+                margin: 0;
+            }
+
+            th,
+            td {
+                padding: 6px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="firstline-Business-Dashboard">
+            <div class="namewithicone-Business-Dashboard">
+                <h4 class="">Repair</h4>
+            </div>
+        </div>
+
+
+        <div class="fist-line">
+
+            <div class="fromdate"> <label for="fromDate">From Date:</label>
+                <input type="date" id="fromDate" name="fromDate">
+            </div>
+
+            <div class="todate"> <label for="toDate">To Date:</label>
+                <input type="date" id="toDate" name="toDate">
+            </div>
+
+            <div class="dropdown">
+                <label for="fromDate">Customer Category</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="option1">Select</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <label for="fromDate">State</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="option1">Select</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+
+            <div class="search-container">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <div class="first-chart">
+                <div id="chart_div1"></div>
+            </div>
+            <div class="second-chart">
+                <div id="chart_div2"></div>
+            </div>
+        </div>
+
+
+        <div class="fist-line">
+
+            <div class="fromdate"> <label for="fromDate">From Date:</label>
+                <input type="date" id="fromDate" name="fromDate">
+            </div>
+
+            <div class="todate"> <label for="toDate">To Date:</label>
+                <input type="date" id="toDate" name="toDate">
+            </div>
+
+            <div class="dropdown">
+                <label for="fromDate">State</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="option1">Select</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+
+            <div class="dropdown">
+                <label for="fromDate">Customer Category</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="option1">Select</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+
+            <div class="dropdown">
+                <label for="fromDate">Action Taken</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="option1">Select</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+
+
+            <div class="search-container">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="tablewithgraph">
+            <div class="table-Dashboard-container">
+
+                <div class="dtc-p">
+                    <p class="dtc-pa">Customer Wise Action Taken Count</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Issues</th>
+                            <th>Action Taken</th>
+                            <th>Resolution %</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Customer A</td>
+                            <td>500</td>
+                            <td>300</td>
+                            <td>10</td>
+                        </tr>
+
+                        <tr>
+                        <tr>
+                            <td>Customer B</td>
+                            <td>500</td>
+                            <td>300</td>
+                            <td>10</td>
+                        </tr>
+                        </tr>
+
+                        <tr>
+                        <tr>
+                            <td>Customer C</td>
+                            <td>500</td>
+                            <td>300</td>
+                            <td>10</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Customer D</td>
+                            <td>500</td>
+                            <td>300</td>
+                            <td>10</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Customer E</td>
+                            <td>500</td>
+                            <td>300</td>
+                            <td>10</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>1000</td>
+                            <td>500</td>
+                            <td>300</td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chart">
+                <div id="chart_div" style="height: 350px;"></div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <style>
+        @media (max-width:767px) {
+
+            #chart_div,
+            #chart_div1,
+            #chart_div2 {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart1);
+        google.charts.setOnLoadCallback(drawChart2);
+
+        // First Chart
+        function drawChart1() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['East', 3],
+                ['West', 1],
+                ['North', 1],
+                ['South', 1]
+            ]);
+
+            var options = {
+                'title': 'Issue Analysis Problem Wise',
+                'width': '100%',
+                'height': 300,
+                'backgroundColor': '#F5F8FF',
+                'borderRadius': 10,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+            chart.draw(data, options);
+        }
+
+        // Second Chart
+        function drawChart2() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['East', 3],
+                ['West', 1],
+                ['North', 1],
+                ['South', 1]
+            ]);
+
+            var options = {
+                'title': 'Issue Analysis State Wise',
+                'width': '100%',
+                'height': 300,
+                'backgroundColor': '#F5F8FF'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+        }
+
+
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
+        google.charts.setOnLoadCallback(drawAnnotations);
+
+        function drawAnnotations() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('timeofday', 'Time of Day');
+            data.addColumn('number', 'Motivation Level');
+            data.addColumn({ type: 'string', role: 'annotation' });
+            data.addColumn('number', 'Energy Level');
+            data.addColumn({ type: 'string', role: 'annotation' });
+
+            data.addRows([
+                [{ v: [8, 0, 0], f: '8 am' }, 1, '1', .25, '.2'],
+                [{ v: [9, 0, 0], f: '9 am' }, 2, '2', .5, '.5'],
+                [{ v: [10, 0, 0], f: '10 am' }, 3, '3', 1, '1'],
+                [{ v: [11, 0, 0], f: '11 am' }, 4, '4', 2.25, '2'],
+                [{ v: [12, 0, 0], f: '12 pm' }, 5, '5', 2.25, '2'],
+                [{ v: [13, 0, 0], f: '1 pm' }, 6, '6', 3, '3'],
+                [{ v: [14, 0, 0], f: '2 pm' }, 7, '7', 3.25, '3'],
+                [{ v: [15, 0, 0], f: '3 pm' }, 8, '8', 5, '5'],
+                [{ v: [16, 0, 0], f: '4 pm' }, 9, '9', 6.5, '6'],
+                [{ v: [17, 0, 0], f: '5 pm' }, 10, '10', 10, '10'],
+            ]);
+
+            var options = {
+                title: 'Problem Description Wise Action Taken Count',
+                annotations: {
+                    alwaysOutside: true,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#000',
+                        auraColor: 'none'
+                    }
+                },
+                hAxis: {
+                    title: 'Time of Day',
+                    format: 'h:mm a',
+                    viewWindow: {
+                        min: [7, 30, 0],
+                        max: [17, 30, 0]
+                    }
+                },
+                vAxis: {
+                    title: 'Rating (scale of 1-10)'
+                },
+                backgroundColor: {
+                    fill: '#F5F8FF'
+                }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+
+    </script>
+</body>
+
+</html>
